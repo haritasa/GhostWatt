@@ -47,7 +47,7 @@ npm install
 npm run dev
 ```
 
-Use the dashboard **Import** button to select the local folder containing `ele.csv`, `occ.csv`, `wifi.csv`, and `site_weather.csv`. The supplied full Building 59 source folder is large, so it is intentionally not committed to ordinary Git; configure its local path at import time or provide an approved release/LFS distribution before judging.
+Use the dashboard **Import** button after preparing the public dataset with `python3 scripts/fetch_building59_data.py`. The script downloads the official Dryad archive, extracts the four files GhostWatt needs into the default `data/raw/Building_59/Bldg59_clean data` location, and keeps data out of Git. You can alternatively paste any valid local data-folder path into the Import dialog.
 
 Run backend tests:
 
@@ -91,8 +91,8 @@ The committed `.kiro/hooks/run-backend-tests.json` hook runs the backend test su
 
 ### Capabilities not claimed
 
-This submission does **not** claim use of Kiro CLI, Kiro Web, Crew, MCP integrations, property-based testing, or Kiro Powers. Those tools were not required for the implemented workflow, so they are not represented as used.
+This submission does **not** claim use of Kiro CLI, Kiro Web, Crew, MCP integrations, property-based testing, or Kiro Powers. Those capabilities were not required for this implementation and should not be represented as used.
 
 ## Original-work and data note
 
-GhostWatt application code and presentation material should be reviewed by the team before submission to ensure the team owns or has permission to use every included asset. The Building 59 dataset is treated as an external research dataset; retain its required attribution, license, and distribution terms when sharing it.
+Review all source code, presentation assets, and dataset attribution before submission to confirm the team owns or has permission to use them. The Building 59 research data is downloaded from its public Dryad record by `scripts/fetch_building59_data.py`; retain its attribution and distribution terms when sharing it.

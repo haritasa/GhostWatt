@@ -37,11 +37,21 @@ npm run dev
 
 Open http://localhost:5173. The dashboard uses the stable `/api/dashboard`, `/api/anomalies`, and `/api/anomalies/{event_id}` contracts.
 
+### Get the public Building 59 data
+
+The 2.3 GB uncompressed research dataset is intentionally not committed to Git. Download and prepare the four CSVs GhostWatt needs with the included script:
+
+```bash
+python3 scripts/fetch_building59_data.py
+```
+
+This downloads the public [Building 59 Dryad dataset](https://datadryad.org/dataset/doi:10.7941/D1N33Q), validates `ele.csv`, `occ.csv`, `wifi.csv`, and `site_weather.csv`, and installs them at the default path: `data/raw/Building_59/Bldg59_clean data`. Use `--full` to extract the complete archive, or `--archive /path/to/Building_59.zip` to use a local archive. The script does not add data files to Git.
+
 ### Load and analyze Building 59
 
-The app deliberately does not auto-ingest a multi-gigabyte dataset. In the dashboard's **Demo view**, paste the absolute path to the folder containing `ele.csv` and `occ.csv` and select **Import & analyze**. You can instead copy that folder to `data/raw/Building_59/Bldg59_clean data`, or set `BUILDING_59_DATA_DIR` before starting FastAPI.
+After running the setup script, start the app and click **Import** with an empty folder path to use the configured default. You can instead paste any valid local Building 59 data-folder path. The import action writes normalized readings and analysis results to local SQLite.
 
-`ele.csv` is normalized as five kW signals; interval kWh is calculated using each observed duration. One-minute occupancy counts are averaged into 15-minute intervals. The detector compares each low-occupancy interval against the median of the same hour, weekday/weekend category, and occupancy category. Thresholds, event-gap tolerance, cost rate, and CO₂ rate are all configurable through environment variables defined in `src/backend/app/core/config.py`.
+`ele.csv` is normalized as five kW signals; interval kWh is calculated using each observed duration. Camera occupancy remains a people count, Wi-Fi remains a device-count proxy, and weather is retained as separate context. Thresholds, event-gap tolerance, cost rate, and CO₂ rate are configurable through environment variables defined in `src/backend/app/core/config.py`.
 Add shadcn components with `npx shadcn@latest add button`.
 
 ### Schedule-aware anomaly model
