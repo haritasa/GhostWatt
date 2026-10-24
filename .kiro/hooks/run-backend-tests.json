@@ -1,0 +1,15 @@
+{
+  "version": "v1",
+  "hooks": [
+    {
+      "name": "Run backend tests after spec task",
+      "trigger": "PostTaskExec",
+      "description": "Runs GhostWatt's isolated backend test suite after a Kiro spec task completes.",
+      "action": {
+        "type": "command",
+        "command": "cd src/backend && ../../.venv/bin/python -m pytest tests -q",
+        "timeout": 120
+      }
+    }
+  ]
+}

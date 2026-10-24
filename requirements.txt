@@ -8,6 +8,9 @@ pandas==3.1.0
 sqlalchemy==2.1.6
 # SQLite ships with Python's standard library (sqlite3), no package needed.
 
+# --- Test ---
+pytest==8.3.5
+
 # --- AI / ML ---
 numpy==2.5.4
 scikit-learn==1.9.1

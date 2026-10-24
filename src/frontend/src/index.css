@@ -80,3 +80,107 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* Dashboard-specific dark-mode treatment for explicit Tailwind color utilities. */
+.dark .bg-white {
+  background-color: #111827;
+}
+
+.dark .bg-slate-50 {
+  /* Matches the hero page canvas. */
+  background-color: #020617;
+}
+
+.dark .bg-slate-100 {
+  background-color: #1e293b;
+}
+
+.dark .border-slate-200,
+.dark .divide-slate-100 > :not([hidden]) ~ :not([hidden]) {
+  border-color: #334155;
+}
+
+.dark .text-slate-900 {
+  color: #f8fafc;
+}
+
+.dark .text-slate-600 {
+  color: #cbd5e1;
+}
+
+.dark .text-slate-500 {
+  color: #94a3b8;
+}
+
+.dark .text-slate-400 {
+  color: #94a3b8;
+}
+
+.dark .hover\:bg-slate-50:hover {
+  background-color: #1e293b;
+}
+
+.dark .hover\:border-emerald-400:hover {
+  border-color: #34d399;
+}
+
+.dark .bg-amber-50 {
+  background-color: #422d08;
+}
+
+.dark .border-amber-200,
+.dark .border-amber-300 {
+  border-color: #854d0e;
+}
+
+.dark .bg-amber-900 {
+  background-color: #fbbf24;
+  color: #422006;
+}
+
+.dark .hover\:bg-amber-950:hover {
+  background-color: #fcd34d;
+}
+
+.dark .text-amber-900,
+.dark .text-amber-800 {
+  color: #fde68a;
+}
+
+.dark .bg-emerald-50 {
+  background-color: #064e3b;
+}
+
+.dark .text-emerald-950,
+.dark .text-emerald-800 {
+  color: #d1fae5;
+}
+
+.dark .bg-orange-50 {
+  background-color: #431407;
+}
+
+.dark .text-orange-800 {
+  color: #fed7aa;
+}
+
+.dark svg line {
+  stroke: #334155;
+}
+
+/* High-contrast dark severity badges. */
+.dark .bg-sky-100 { background-color: #0c4a6e; }
+.dark .text-sky-700 { color: #e0f2fe; }
+.dark .ring-sky-200 { --tw-ring-color: #38bdf8; }
+
+.dark .bg-amber-100 { background-color: #78350f; }
+.dark .text-amber-800 { color: #fef3c7; }
+.dark .ring-amber-200 { --tw-ring-color: #f59e0b; }
+
+.dark .bg-orange-100 { background-color: #7c2d12; }
+.dark .text-orange-800 { color: #ffedd5; }
+.dark .ring-orange-200 { --tw-ring-color: #fb923c; }
+
+.dark .bg-rose-100 { background-color: #881337; }
+.dark .text-rose-800 { color: #ffe4e6; }
+.dark .ring-rose-200 { --tw-ring-color: #fb7185; }
