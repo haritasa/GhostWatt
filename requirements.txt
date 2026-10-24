@@ -1,0 +1,14 @@
+# GhostWatt backend + AI/ML dependencies (pinned for reproducible installs)
+
+# --- Backend ---
+fastapi==0.162.0
+pydantic==2.14.1
+uvicorn[standard]==0.54.0
+pandas==3.1.0
+sqlalchemy==2.1.6
+# SQLite ships with Python's standard library (sqlite3), no package needed.
+
+# --- AI / ML ---
+numpy==2.5.4
+scikit-learn==1.9.1
+xgboost==3.4.1

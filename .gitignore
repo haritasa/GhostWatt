@@ -1,0 +1,58 @@
+# ===== OS / Editors =====
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ===== Python =====
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+build/
+dist/
+.venv/
+venv/
+env/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+.ipynb_checkpoints/
+
+# ===== Environment / secrets =====
+.env
+.env.*
+!.env.example
+
+# ===== Database =====
+*.db
+*.sqlite
+*.sqlite3
+*.db-journal
+
+# ===== Data & ML artifacts =====
+# Datasets are large; share them outside git
+data/
+*.pkl
+*.joblib
+*.ubj
+models/artifacts/
+
+# ===== Node / Frontend =====
+node_modules/
+src/frontend/dist/
+src/frontend/.vite/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+*.local
+
+# ===== Logs =====
+logs/
+*.log
